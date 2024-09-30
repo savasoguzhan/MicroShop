@@ -1,6 +1,6 @@
-﻿namespace MicroShop.Discount.Entities
+﻿namespace MicroShop.Discount.Dtos
 {
-    public class Coupon
+    public class ResultCouponDto
     {
         public int CouponId { get; set; }
         public string Code { get; set; }
