@@ -3,8 +3,10 @@ using MicroShop.Order.Application.Features.CQRS.Handlers.OrderDetailHandlers;
 using MicroShop.Order.Application.Interfaces;
 using MicroShop.Order.Persistence.Repositories;
 using MicroShop.Order.Application.Services;
+using MicroShop.Order.Persistence.Context;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddScoped<OrderContext>();
 
 // Add services to the container.
 builder.Services.AddScoped<GetAddressQueryHandler>();

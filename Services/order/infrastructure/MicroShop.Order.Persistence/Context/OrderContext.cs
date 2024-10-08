@@ -12,7 +12,7 @@ namespace MicroShop.Order.Persistence.Context
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=...;intial Catalog=MicroShopOrderDb; Integrated Securtiy=true");
+            optionsBuilder.UseSqlServer("Server=localhost,1440;initial Catalog=MicroShopOrderDb;User=sa; Password=123456aA*");
         }
 
         public DbSet<Address> Addresses { get; set; }
