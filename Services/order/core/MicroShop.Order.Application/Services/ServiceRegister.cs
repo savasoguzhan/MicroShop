@@ -8,12 +8,11 @@ using System.Threading.Tasks;
 
 namespace MicroShop.Order.Application.Services
 {
-    public static class ServiceRegistration
+    public static class ServiceRegister
     {
-
-        public static void AddAppService(this IServiceCollection services, IConfiguration configuration)
+        public static void AddApplicationServices(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddMediatR(cfg=>cfg.RegisterServicesFromAssemblies(typeof(ServiceCollection).Assembly));
+            services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(ServiceRegister).Assembly));
         }
     }
 }

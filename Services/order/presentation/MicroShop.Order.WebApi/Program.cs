@@ -2,8 +2,10 @@ using MicroShop.Order.Application.Features.CQRS.Handlers.AddressHandlers;
 using MicroShop.Order.Application.Features.CQRS.Handlers.OrderDetailHandlers;
 using MicroShop.Order.Application.Interfaces;
 using MicroShop.Order.Persistence.Repositories;
-using MicroShop.Order.Application.Services;
+
 using MicroShop.Order.Persistence.Context;
+using System.Reflection;
+using MicroShop.Order.Application.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<OrderContext>();
@@ -22,7 +24,10 @@ builder.Services.AddScoped<UpdateOrderDetailCommandHandler>();
 builder.Services.AddScoped<RemoveOrderDetailQueryHandler>();
 
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
-builder.Services.AddAppService(builder.Configuration);
+//builder.Services.AddAppService(builder.Configuration);
+builder.Services.AddApplicationServices(builder.Configuration);
+
+
 
 
 builder.Services.AddControllers();
