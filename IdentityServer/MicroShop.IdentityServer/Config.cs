@@ -24,7 +24,8 @@ namespace MicroShop.IdentityServer
           new ApiResource("resourceOrder")
           {
               Scopes={"OrderFullPermission"}
-          }
+          },
+          new ApiResource(IdentityServerConstants.LocalApi.ScopeName)
         };
 
         public static IEnumerable<IdentityResource> IdentityResources => new IdentityResource[]
@@ -39,7 +40,8 @@ namespace MicroShop.IdentityServer
             new ApiScope("CatalogFullPermission","Full authority for catalog operations"),
             new ApiScope("CatalogReadPermission","Reading authority for catalog operations"),
             new ApiScope("DiscountFullPermission","Full authority for discount operations"),
-            new ApiScope("OrderFullPermission","Full authority for order operations")
+            new ApiScope("OrderFullPermission","Full authority for order operations"),
+             new ApiScope(IdentityServerConstants.LocalApi.ScopeName)
         };
 
         public static IEnumerable<Client> Clients => new Client[]
