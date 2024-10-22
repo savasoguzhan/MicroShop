@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MicroShop.Cargo.EntityLayer\MicroShop.Cargo.EntityLayer.csproj" />
+  </ItemGroup>
+
 </Project>

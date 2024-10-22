@@ -7,7 +7,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.35">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.35">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MicroShop.Cargo.Business\MicroShop.Cargo.Business.csproj" />
+    <ProjectReference Include="..\MicroShop.Cargo.DAL\MicroShop.Cargo.DAL.csproj" />
+    <ProjectReference Include="..\MicroShop.Cargo.DtoLayer\MicroShop.Cargo.DtoLayer.csproj" />
+    <ProjectReference Include="..\MicroShop.Cargo.EntityLayer\MicroShop.Cargo.EntityLayer.csproj" />
   </ItemGroup>
 
 </Project>
