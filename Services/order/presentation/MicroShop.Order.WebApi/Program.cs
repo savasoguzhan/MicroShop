@@ -6,8 +6,16 @@ using MicroShop.Order.Persistence.Repositories;
 using MicroShop.Order.Persistence.Context;
 using System.Reflection;
 using MicroShop.Order.Application.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opt =>
+{
+    opt.Authority = builder.Configuration["IdentityServerUrl"];
+    opt.RequireHttpsMetadata = false;
+    opt.Audience = "resourceOrder";
+});
 builder.Services.AddScoped<OrderContext>();
 
 // Add services to the container.
@@ -45,7 +53,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
