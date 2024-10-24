@@ -6,4 +6,14 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MicroShop.Cargo.DAL\MicroShop.Cargo.DAL.csproj" />
+    <ProjectReference Include="..\MicroShop.Cargo.EntityLayer\MicroShop.Cargo.EntityLayer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Extensions\" />
+    <Folder Include="ValidationRule\" />
+  </ItemGroup>
+
 </Project>
