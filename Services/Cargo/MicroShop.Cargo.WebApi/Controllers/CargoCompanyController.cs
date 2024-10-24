@@ -1,11 +1,13 @@
 ﻿using MicroShop.Cargo.Business.Abstract;
 using MicroShop.Cargo.DtoLayer.DTOs.CargoCompanyDto;
 using MicroShop.Cargo.EntityLayer.Concrate;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MicroShop.Cargo.WebApi.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class CargoCompanyController : ControllerBase
