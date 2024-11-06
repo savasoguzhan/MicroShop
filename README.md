@@ -4,54 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Title</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #343a40;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-        h1 {
-            font-size: 2.5em;
-        }
-        section {
-            padding: 20px;
-        }
-        pre {
-            background-color: #272727;
-            color: #f8f8f2;
-            padding: 10px;
-            border-radius: 5px;
-            font-size: 1.1em;
-            overflow-x: auto;
-        }
-        h2 {
-            color: #007bff;
-        }
-        ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-        li {
-            margin: 10px 0;
-        }
-        footer {
-            background-color: #343a40;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-    </style>
+   
 </head>
 <body>
 
