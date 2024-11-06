@@ -70,19 +70,9 @@ docker-compose up --build
     </ul>
 </section>
 
-<section>
-    <h2>Contributing</h2>
-    <p>If you'd like to contribute to the project, please follow these steps:</p>
-    <ul>
-        <li>Fork the repository and create your own copy.</li>
-        <li>Make changes and commit them to your fork.</li>
-        <li>Submit a pull request.</li>
-    </ul>
-</section>
 
-<footer>
-    <p>&copy; 2024  - All rights reserved.</p>
-</footer>
+
+
 
 </body>
 </html>
