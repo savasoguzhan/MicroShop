@@ -8,6 +8,7 @@ namespace MicroShop.WebUI.Areas.Admin.Controllers
 {
     [Area("Admin")]
     [AllowAnonymous]
+    [Route("Admin/Category")]
     public class CategoryController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;
@@ -18,7 +19,7 @@ namespace MicroShop.WebUI.Areas.Admin.Controllers
         }
 
 
-
+        [Route("Index")]
         public async Task<IActionResult> Index()
         {
             ViewBag.v1 = "Home PAge";
@@ -38,7 +39,7 @@ namespace MicroShop.WebUI.Areas.Admin.Controllers
 
             return View();
         }
-
+        [Route("CreateCategory")]
         [HttpGet]
         public IActionResult CreateCategory()
         {
@@ -48,7 +49,7 @@ namespace MicroShop.WebUI.Areas.Admin.Controllers
             ViewBag.title = "Category Operation";
             return View();
         }
-
+        [Route("CreateCategory")]
         [HttpPost]
         public async Task<IActionResult> CreateCategory(CreateCategoryDto createCategoryDto)
         {
@@ -57,6 +58,17 @@ namespace MicroShop.WebUI.Areas.Admin.Controllers
             StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
             var responseMessage = await client.PostAsync("https://localhost:7200/api/Categories", stringContent);
             if (responseMessage.IsSuccessStatusCode)
+            {
+                return RedirectToAction("Index", "Category", new { area = "Admin" });
+            }
+            return View();
+        }
+        [Route("DeleteCategory/{id}")]
+        public async Task<IActionResult> DeleteCategory(string id)
+        {
+            var client = _httpClientFactory.CreateClient();
+            var responseMesseage = await client.DeleteAsync("https://localhost:7200/api/Categories?id="+id);
+            if(responseMesseage.IsSuccessStatusCode)
             {
                 return RedirectToAction("Index", "Category", new { area = "Admin" });
             }
