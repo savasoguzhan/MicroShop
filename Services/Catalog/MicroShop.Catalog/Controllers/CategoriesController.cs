@@ -7,7 +7,7 @@ using System.Formats.Asn1;
 
 namespace MicroShop.Catalog.Controllers
 {
-    [Authorize]
+    [AllowAnonymous]
     [Route("api/[controller]")]
     [ApiController]
     public class CategoriesController : ControllerBase

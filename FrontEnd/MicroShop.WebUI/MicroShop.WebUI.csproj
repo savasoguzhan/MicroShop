@@ -29,4 +29,8 @@
     <None Include="wwwroot\MainDownload-OvioAdmin-html5-template\html\tables\et-line-font\fonts\.DS_Store" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MicroShop.Dto\MicroShop.Dto.csproj" />
+  </ItemGroup>
+
 </Project>
