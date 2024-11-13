@@ -25,14 +25,15 @@
                         <input type="text" class="form-control" asp-for="ProductImageUrl" />
                         <br />
                         <label>Product Category</label>
-                        <p>will add dropdown</p>
+                        @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>
+                                 )ViewBag.CategoryValue, new { @class = "form-control" }))
                         <br />
 
                         <label>Product Description</label>
                         <textarea class="form-control" asp-for="ProductDescription" rows="5"></textarea>
                         <br />
 
-                        
+
                         <button class="btn btn-primary"> Add Product</button>
                     </form>
                 </div>
