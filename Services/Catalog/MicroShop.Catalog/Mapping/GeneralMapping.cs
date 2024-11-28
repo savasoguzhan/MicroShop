@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MicroShop.Catalog.Dtos.CategoryDtos;
+using MicroShop.Catalog.Dtos.FeatureSliderDtos;
 using MicroShop.Catalog.Dtos.ProductDetailsDtos;
 using MicroShop.Catalog.Dtos.ProductDtos;
 using MicroShop.Catalog.Dtos.ProductImagesDtos;
@@ -26,6 +27,13 @@ namespace MicroShop.Catalog.Mapping
             CreateMap<ProductImages, ResultProductImageDto>().ReverseMap();
             CreateMap<ProductImages, UpdateProducyImageDto>().ReverseMap();
             CreateMap<ProductImages, CreateProductImageDto>().ReverseMap();
+
+
+            CreateMap<Product, ResultProductsWithCategoryDto>().ReverseMap();
+
+            CreateMap<FeatureSlider, ResultFeatureSliderDto>().ReverseMap();
+            CreateMap<FeatureSlider, CreateFeatureSliderDto>().ReverseMap();
+            CreateMap<FeatureSlider, UpdateFeatureSliderDto>().ReverseMap();
 
         }
     }

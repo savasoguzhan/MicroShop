@@ -53,5 +53,12 @@ namespace MicroShop.Catalog.Controllers
             return Ok("Product updated");
         }
 
+        [HttpGet("ProductListWithCategory")]
+        public async Task<IActionResult> ProductListWithCategory()
+        {
+            var values = await _productService.GetProductsWithCategoryAsync();
+            return Ok(values);
+        }
+
     }
 }

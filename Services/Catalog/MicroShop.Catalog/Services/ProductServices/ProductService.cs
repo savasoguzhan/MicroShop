@@ -10,12 +10,14 @@ namespace MicroShop.Catalog.Services.ProductServices
     {
         private readonly IMapper _mapper;
         private readonly IMongoCollection<Product> _productCollection;
+        private readonly IMongoCollection<Category> _categoryCollection;
 
         public ProductService(IMapper mapper, IDataBaseSettings _dataBaseSettings)
         {
             var client = new MongoClient(_dataBaseSettings.ConnectionString);
             var database = client.GetDatabase(_dataBaseSettings.DatabaseName);
             _productCollection = database.GetCollection<Product>(_dataBaseSettings.ProductCollectionName);
+            _categoryCollection = database.GetCollection<Category>(_dataBaseSettings.CategoryCollectionName);
             _mapper = mapper;
         }
         public async Task CreateProductAsync(CreateProductDto createProductDto)
@@ -39,6 +41,16 @@ namespace MicroShop.Catalog.Services.ProductServices
         {
             var values = await  _productCollection.Find<Product>(x => x.ProductID == id).FirstOrDefaultAsync();
            return _mapper.Map<ResultProductDto>(values);
+        }
+
+        public async Task<List<ResultProductsWithCategoryDto>> GetProductsWithCategoryAsync()
+        {
+            var values = await _productCollection.Find(x => true).ToListAsync();
+            foreach (var item in values)
+            {
+                item.Category= await _categoryCollection.Find<Category>(x=>x.CategoryID==item.CategoryID).FirstAsync();
+            }
+            return _mapper.Map<List<ResultProductsWithCategoryDto>>(values);
         }
 
         public async Task UpdateProductAsync(UpdateProductDto updateProductDto)

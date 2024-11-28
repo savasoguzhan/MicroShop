@@ -14,5 +14,7 @@ namespace MicroShop.Catalog.Services.ProductServices
         Task DeleteProductAsync(string id);
 
         Task<ResultProductDto> GetByIdProductAsync(string id);
+
+        Task<List<ResultProductsWithCategoryDto>> GetProductsWithCategoryAsync();
     }
 }
