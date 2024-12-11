@@ -3,6 +3,7 @@ using MicroShop.Catalog.Services.FeatureSliderServices;
 using MicroShop.Catalog.Services.ProductDetailServices;
 using MicroShop.Catalog.Services.ProductImagesServices;
 using MicroShop.Catalog.Services.ProductServices;
+using MicroShop.Catalog.Services.SpecialOffersServices;
 using MicroShop.Catalog.Settings;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Options;
@@ -24,6 +25,7 @@ builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IProductDetailService, ProductDetailService>();
 builder.Services.AddScoped<IProductImageService, ProductImageService>();
 builder.Services.AddScoped<IFeatureSliderService, FeatureSliderService>();
+builder.Services.AddScoped<ISpecialOfferService, SpecialOfferService>();
 
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
