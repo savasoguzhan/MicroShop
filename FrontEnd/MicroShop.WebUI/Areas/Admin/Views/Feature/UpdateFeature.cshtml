@@ -1,0 +1,34 @@
+﻿@using MicroShop.Dto.CatologDtos.FeatureDtos
+@model UpdateFeatureDto
+@{
+    ViewData["Title"] = "UpdateFeature";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<section class="content container-fluid">
+    <div class="row">
+
+        <div class="col-md-12">
+            <div class="chart-box">
+                <h4>Feature Update</h4>
+                <br />
+                <div class="bs-example" data-example-id="bordered-table">
+
+                    <form method="post">
+                        <input  type="hidden" asp-for="FeatureID"/>
+                        <label>Category Id</label>
+                        <input type="text" readonly class="form-control" asp-for="FeatureID" />
+                        <br />
+                        <label>Feature Name</label>
+                        <input type="text" class="form-control" asp-for="FeatureName" />
+                        <br />
+                        <label>Feature Icon </label>
+                        <input type="text" class="form-control" asp-for="Icon" />
+                        <br />
+                        <button class="btn btn-primary"> Update Feature</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
