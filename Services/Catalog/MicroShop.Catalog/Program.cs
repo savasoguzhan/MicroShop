@@ -1,3 +1,4 @@
+using MicroShop.Catalog.Services.BrandServices;
 using MicroShop.Catalog.Services.CategoryServices;
 using MicroShop.Catalog.Services.FeatureServices;
 using MicroShop.Catalog.Services.FeatureSliderServices;
@@ -30,6 +31,7 @@ builder.Services.AddScoped<IFeatureSliderService, FeatureSliderService>();
 builder.Services.AddScoped<ISpecialOfferService, SpecialOfferService>();
 builder.Services.AddScoped<IFeatureServices, FeatureServices>();
 builder.Services.AddScoped<IOfferDiscountService, OfferDiscountService>();
+builder.Services.AddScoped<IBrandService, BrandService>();
 
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
