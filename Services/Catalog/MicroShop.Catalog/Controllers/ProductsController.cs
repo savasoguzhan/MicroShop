@@ -3,6 +3,7 @@ using MicroShop.Catalog.Services.ProductServices;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Globalization;
 
 namespace MicroShop.Catalog.Controllers
 {
@@ -57,6 +58,14 @@ namespace MicroShop.Catalog.Controllers
         public async Task<IActionResult> ProductListWithCategory()
         {
             var values = await _productService.GetProductsWithCategoryAsync();
+            return Ok(values);
+        }
+
+
+        [HttpGet("ProductListWithCategoryByCategoryId")]
+        public async Task<IActionResult> ProductListWithCategoryByCategoryId(string id)
+        {
+            var values = await _productService.GetProductsWithCategoryByCategoryIdAsync(id);
             return Ok(values);
         }
 

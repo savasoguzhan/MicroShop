@@ -16,5 +16,7 @@ namespace MicroShop.Catalog.Services.ProductServices
         Task<ResultProductDto> GetByIdProductAsync(string id);
 
         Task<List<ResultProductsWithCategoryDto>> GetProductsWithCategoryAsync();
+
+        Task<List<ResultProductsWithCategoryDto>> GetProductsWithCategoryByCategoryIdAsync(string categoryId);
     }
 }
