@@ -29,7 +29,7 @@ namespace MicroShop.Catalog.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetProduct(string id)
         {
-            var value = _productService.GetByIdProductAsync(id);
+            var value =  await _productService.GetByIdProductAsync(id);
             return Ok(value);
         }
 

@@ -1,8 +1,14 @@
-﻿namespace MicroShop.Catalog.Dtos.ProductImagesDtos
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MicroShop.Dto.CatologDtos.ProductImagesDtos
 {
-    public class UpdateProducyImageDto
+    public class CreateProductImageDto
     {
-        public string ProductImagesID { get; set; }
+        
 
         public string Image1 { get; set; }
         public string Image2 { get; set; }

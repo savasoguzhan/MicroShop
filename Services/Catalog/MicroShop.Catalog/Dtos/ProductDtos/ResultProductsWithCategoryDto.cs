@@ -17,6 +17,6 @@ namespace MicroShop.Catalog.Dtos.ProductDtos
 
         public string CategoryID { get; set; }
 
-        public string CategoryName { get; set; }
+        public ResultCategoryDto Category { get; set; }
     }
 }

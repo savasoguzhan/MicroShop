@@ -13,5 +13,8 @@ namespace MicroShop.Catalog.Services.ProductImagesServices
         Task DeleteProductImageAsync(string id);
 
         Task<ResultProductImageDto> GetByIdProductImageAsync(string id);
+        Task<ResultProductImageDto> GetByProductIdProductImageAsync(string id);
+
+
     }
 }

@@ -42,6 +42,12 @@ namespace MicroShop.Catalog.Services.ProductImagesServices
             return _mapper.Map<ResultProductImageDto>(value);
         }
 
+        public async Task<ResultProductImageDto> GetByProductIdProductImageAsync(string id)
+        {
+            var values = await _productImageCollection.Find(x => x.ProductID==id).FirstOrDefaultAsync();
+            return _mapper.Map<ResultProductImageDto>(values);
+        }
+
         public async Task UpdateProductImageAsync(UpdateProducyImageDto updateProductImageDto)
         {
             var values = _mapper.Map<ProductImages>(updateProductImageDto);

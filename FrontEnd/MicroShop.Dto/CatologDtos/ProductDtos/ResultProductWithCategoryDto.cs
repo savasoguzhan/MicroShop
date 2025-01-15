@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MicroShop.Dto.CatologDtos.CategoryDtos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,6 +22,6 @@ namespace MicroShop.Dto.CatologDtos.ProductDtos
 
         public string CategoryID { get; set; }
 
-        public string CategoryName { get; set; }
+        public ResultCategoryDto Category { get; set; }
     }
 }

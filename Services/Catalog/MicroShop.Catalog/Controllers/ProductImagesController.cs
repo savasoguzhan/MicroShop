@@ -50,5 +50,13 @@ namespace MicroShop.Catalog.Controllers
             await _productImageService.UpdateProductImageAsync(updateProducyImageDto);
             return Ok("ProductImage Updated");
         }
+
+
+        [HttpGet("ProductImagesByProductId")]
+        public async Task<IActionResult> ProductImagesByProductId(string id)
+        {
+            var values = await _productImageService.GetByProductIdProductImageAsync(id);
+            return Ok(values);
+        }
     }
 }
