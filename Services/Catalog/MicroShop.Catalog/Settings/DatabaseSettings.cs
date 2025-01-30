@@ -14,6 +14,7 @@
         public string AboutCollectionName { get; set; }
         public string FeatureCollectionName { get; set; }
         public string OfferDiscountCollectionName { get; set; }
+        public string ContactCollectionName { get; set; }
 
     }
 }

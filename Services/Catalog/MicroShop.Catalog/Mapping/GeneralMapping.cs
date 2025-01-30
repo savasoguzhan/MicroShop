@@ -2,6 +2,7 @@
 using MicroShop.Catalog.Dtos.AboutDtos;
 using MicroShop.Catalog.Dtos.BrandDtos;
 using MicroShop.Catalog.Dtos.CategoryDtos;
+using MicroShop.Catalog.Dtos.ContactDtos;
 using MicroShop.Catalog.Dtos.FeatureDtos;
 using MicroShop.Catalog.Dtos.FeatureSliderDtos;
 using MicroShop.Catalog.Dtos.OfferDiscountDtos;
@@ -59,6 +60,12 @@ namespace MicroShop.Catalog.Mapping
             CreateMap<About,ResultAboutDto>().ReverseMap();
             CreateMap<About,CreateAboutDto>().ReverseMap();
             CreateMap<About,UpdateAboutDto>().ReverseMap();
+
+            CreateMap<Contact,ResultContactDto>().ReverseMap();
+            CreateMap<Contact,CreateContactDto>().ReverseMap();
+            CreateMap<Contact,UpdateContactDto>().ReverseMap();
+
+           
 
 
         }
