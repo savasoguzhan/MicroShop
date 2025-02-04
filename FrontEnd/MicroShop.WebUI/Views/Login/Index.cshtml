@@ -1,9 +1,10 @@
-﻿
+﻿@model CreateLoginDto
 @{
     Layout = null;
 }
+@using MicroShop.Dto.IdentityDtos.LoginDtos
 @using MicroShop.Dto.IdentityDtos.RegisterDtos
-@model CreateRegisterDto
+
 @{
 	Layout = null;
 }
@@ -43,7 +44,7 @@
 				
 				<div class="form-row">
 					<label for="your_username">User Name</label>
-					<input type="text" asp-for="Username" id="your_username" class="input-text">
+					<input type="text" asp-for="UserName" id="your_username" class="input-text">
 				</div>
 				<div class="form-group">
 					<div class="form-row form-row-1 ">
