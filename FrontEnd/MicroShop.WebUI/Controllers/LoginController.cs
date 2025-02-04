@@ -1,5 +1,6 @@
 ﻿using MicroShop.Dto.IdentityDtos.LoginDtos;
 using MicroShop.WebUI.Models;
+using MicroShop.WebUI.Services;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc;
@@ -13,10 +14,12 @@ namespace MicroShop.WebUI.Controllers
 	public class LoginController : Controller
 	{
 		private readonly IHttpClientFactory _httpClientFactory;
+		private readonly ILoginService _loginService;
 
-		public LoginController(IHttpClientFactory httpClientFactory)
+		public LoginController(IHttpClientFactory httpClientFactory, ILoginService loginService)
         {
 			_httpClientFactory = httpClientFactory;
+			_loginService = loginService;
 		}
 
 		[HttpGet]
@@ -28,6 +31,7 @@ namespace MicroShop.WebUI.Controllers
 		[HttpPost]
 		public async Task<IActionResult> Index(CreateLoginDto createLoginDto)
 		{
+			
 			var client = _httpClientFactory.CreateClient();
 			var content = new StringContent(JsonSerializer.Serialize(createLoginDto),Encoding.UTF8,"application/json");
 			var response = await client.PostAsync("http://localhost:5001/api/Login", content);
@@ -54,6 +58,7 @@ namespace MicroShop.WebUI.Controllers
 							IsPersistent = true,
 						};
 						await HttpContext.SignInAsync(JwtBearerDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity), authProps);
+						var id = _loginService.GetUserId;
 
 						return RedirectToAction("Index","Default");
 					}
